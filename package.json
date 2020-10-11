@@ -1,0 +1,20 @@
+{
+  "name": "my-wallet-api",
+  "version": "1.0.0",
+  "description": "API for my-wallet front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Jon Fleet",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "config": "^3.3.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.7"
+  }
+}

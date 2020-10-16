@@ -1,5 +1,4 @@
 {
-    "jwtPrivateKey": "unsecureKey",
     "db": "mongodb://locahost/my-wallet",
     "port": "3700",
     "requiresAuth": false

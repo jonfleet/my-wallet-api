@@ -1,11 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const {Expense} = require("../models/expense")
+const auth = require('../middleware/auth')
 const cors = require('cors')
 
 router.options('/report', cors())
 
-router.get('/report', cors(), async (req, res ) => {
+router.get('/report', auth, cors(), async (req, res ) => {
     try{
         const report = await Expense.find()
         // throw Error
@@ -15,8 +16,6 @@ router.get('/report', cors(), async (req, res ) => {
         res.send([])
         console.log("Error: Something went wrong with the Query")
     }
-    
-    
 })
 
 module.exports = router

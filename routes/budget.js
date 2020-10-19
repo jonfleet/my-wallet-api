@@ -8,7 +8,7 @@ const cors = require('cors')
 // router.use(cors)
 router.options('/budget', cors())
 
-router.get("/budget", cors(), async (req,res) => {
+router.get("/budget", auth,  cors(), async (req,res) => {
     try {
         const result = await Budget.find({})
         // console.log(result) 

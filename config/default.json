@@ -2,5 +2,6 @@
     "db": "mongodb://localhost/my-wallet",
     "mlab" : "mongodb://<username>:<password>@ds161539.mlab.com:61539/my_wallet",
     "port": "3700",
+    "jwtPrivateKey": "unsecurekey",
     "requiresAuth": false
 }

@@ -4,6 +4,7 @@
   "description": "API for my-wallet front-end",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "start"
   },
   "author": "Jon Fleet",

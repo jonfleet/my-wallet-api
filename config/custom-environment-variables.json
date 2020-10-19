@@ -1,3 +1,4 @@
 {
-    "jwtPrivateKey": "my-wallet_jwtPrivateKey"
+    "jwtPrivateKey": "my-wallet_jwtPrivateKey",
+    "mlab" : "my-wallet_db"
 }

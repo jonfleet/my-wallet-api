@@ -10,10 +10,10 @@ const config = require('config')
 router.options('/createUser', cors())
 
 router.post('/createUser', cors(), async (req, res) => {
-    try {
+    // try {
         let user = await User.findOne({username: req.body.username})
         if(user) return res.status(400).send('User already registered.')
-
+        
         user = new User ({
             username : req.body.username,
             password : await hashPassword(req.body.password)
@@ -27,10 +27,10 @@ router.post('/createUser', cors(), async (req, res) => {
             .header("access-control-expose-headers", "x-auth-token")
             .send(_.pick(user, ["username", "password"]))
 
-    } catch (er){
-        console.log("Error")
-        res.send(er.message)
-    }  
+    // } catch (er){
+    //     console.log("Error")
+    //     res.send(er.message)
+    // }  
 })
 
 module.exports = router

@@ -1,7 +1,5 @@
 {
     "db": "mongodb://localhost/my-wallet",
-    "mlab" : "mongodb://admin:tennisball2@ds161539.mlab.com:61539/my_wallet",
     "port": "3700",
-    "jwtPrivateKey": "unsecurekey",
     "requiresAuth": false
 }

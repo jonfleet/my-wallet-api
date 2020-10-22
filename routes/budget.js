@@ -20,11 +20,11 @@ router.get("/budget", auth,  cors(), async (req,res) => {
 })
 
 
-router.put("/budget/changeBudget", cors(), async (req, res) => {
-    const {category, budget} = req.body
+// router.put("/budget/changeBudget", cors(), async (req, res) => {
+//     const {category, budget} = req.body
     
-    const result = await Budget.update({category: category}, {budget: budget})
-    console.log(result.n)
-} )
+//     const result = await Budget.update({category: category}, {budget: budget})
+//     console.log(result.n)
+// } )
 
 module.exports = router

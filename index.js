@@ -31,8 +31,7 @@ app.use('/', budget)
 app.use('/', expense)
 app.use('/', user)
 app.use('/', auth)
-console.log("Index.js Logs of jwtPrivateKey", process.env.MY_WALLET_JWTPRIVATEKEY)
-console.log("Index.js Logs of mlab location", config.get('mlab'))
+
 
 // Server
 const port = process.env.PORT || config.get("port")

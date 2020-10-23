@@ -7,7 +7,7 @@ const _ = require('lodash')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-if(!config.get('jwtPrivateKey')){
+if(!process.env.MY_WALLET_JWTPRIVATEKEY){
     console.error('Fatal Error. jwtPrivateKey is not definded');
     process.exit(1);
 }

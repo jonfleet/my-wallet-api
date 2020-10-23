@@ -3,7 +3,7 @@ const config = require('config')
 
 
 module.exports = function () {
-    mongoose.connect(config.get('mlab') , {useNewUrlParser: true})
+    mongoose.connect(process.env.MY_WALLET_DB, {useNewUrlParser: true})
 .then( () => console.log("Connected to Database"))
 .catch( (er) => console.log("Connection Error: " + er))
 } 

@@ -5,7 +5,6 @@ const {User} = require("../models/user")
 const hashPassword = require('../util/hash')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
-const config = require('config')
 
 router.options('/createUser', cors())
 

@@ -6,7 +6,7 @@ module.exports = function login(req, res, next){
     if(!token) return res.status(401).send("Access Denied. No token provided")
 
     try{
-        const decoded = jwt.verify(token , config.get('jwtPrivateKey'))        
+        const decoded = jwt.verify(token , process.env.MY_WALLET_JWTPRIVATEKEY)        
         req.user = decoded;
         next()
     } catch(ex) {

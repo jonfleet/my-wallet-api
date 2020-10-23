@@ -1,5 +1,4 @@
 {
     "db": "mongodb://localhost/my-wallet",
-    "port": "3700",
     "requiresAuth": false
 }

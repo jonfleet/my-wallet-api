@@ -31,7 +31,7 @@ app.use('/', budget)
 app.use('/', expense)
 app.use('/', user)
 app.use('/', auth)
-console.log("Index.js Logs of jwtPrivateKey", config.get('jwtPrivateKey'))
+console.log("Index.js Logs of jwtPrivateKey", process.env)
 console.log("Index.js Logs of mlab location", config.get('mlab'))
 
 // Server

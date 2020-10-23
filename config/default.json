@@ -1,5 +1,4 @@
 {
     "db": "mongodb://localhost/my-wallet",
-    "jwtPrivateKey": "my-wallet_jwtPrivateKey",
     "requiresAuth": false
 }

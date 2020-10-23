@@ -32,6 +32,7 @@ app.use('/', expense)
 app.use('/', user)
 app.use('/', auth)
 console.log("Index.js Logs of jwtPrivateKey", config.get('jwtPrivateKey'))
+console.log("Index.js Logs of mlab location", config.get('mlab'))
 
 // Server
 const port = process.env.PORT || config.get("port")

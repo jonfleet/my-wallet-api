@@ -1,5 +1,6 @@
 {
     "db": "mongodb://localhost/my-wallet",
     "jwtPrivateKey": "defaultPrivateKey",
+    "mlab" : "defaultmlab",
     "requiresAuth": false
 }

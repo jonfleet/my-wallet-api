@@ -8,7 +8,6 @@ const user = require('./routes/user')
 const auth = require('./routes/auth')
 const app = express()
 const cors = require('cors')
-const config = require('config')
 
 
 // database Connection

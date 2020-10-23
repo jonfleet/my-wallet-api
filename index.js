@@ -8,6 +8,7 @@ const user = require('./routes/user')
 const auth = require('./routes/auth')
 const app = express()
 const cors = require('cors')
+const config = require('config')
 
 
 // database Connection
@@ -31,7 +32,7 @@ app.use('/', budget)
 app.use('/', expense)
 app.use('/', user)
 app.use('/', auth)
-
+console.log("Index.js Logs of jwtPrivateKey", config.get('jwtPrivateKey'))
 
 // Server
 const port = process.env.PORT || config.get("port")

@@ -6,15 +6,14 @@ const cors = require('cors')
 
 router.options('/report', cors())
 
-router.get('/report', auth, cors(), async (req, res ) => {
+router.post('/report', cors(), async (req, res ) => {
     try{
-        const report = await Expense.find()
-        // throw Error
-        // console.log(report)
+        const report = await Expense.find({userId: req.body.userId})
+        // console.log(req.headers)
         res.send(report)
     } catch (ex){
-        res.send([])
-        console.log("Error: Something went wrong with the Query")
+        res.status(404).send(ex)
+        console.log("Error: Something went wrong with the Query", ex)
     }
 })
 

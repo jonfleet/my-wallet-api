@@ -6,6 +6,7 @@ const {User} = require('../models/user')
 const _ = require('lodash')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 if(!process.env.MY_WALLET_JWTPRIVATEKEY){
     console.error('Fatal Error. jwtPrivateKey is not definded');

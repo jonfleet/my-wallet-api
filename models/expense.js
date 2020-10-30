@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 
 const reportSchema = new mongoose.Schema({ 
-    month: String,
+    userId: String,
     description: String,
     category: String,
     // date: {type: Date, default: Date.now},
-    date: String,
+    month: String,
+    day: String,
+    year: Number,
     amount: Number,
     account: String,
 })

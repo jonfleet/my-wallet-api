@@ -1,11 +1,19 @@
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
-const config = require('config')
 
 const userSchema = mongoose.Schema({
     username: String,
     password: String,
-    isAdmin: Boolean
+    budget: {type: Array, default: 
+        [
+            {category: "Groceries",  budget: 200, spent: 0},
+            {category: "Entertainment",  budget: 200, spent: 0},
+            {category: "Travel", budget: 300, spent: 0},
+            {category: "Rent",  budget: 200, spent: 0},
+            {category: "Utilities",  budget: 200, spent: 0},
+            {category: "Dining",  budget: 200, spent: 0},
+        ]
+    }
 })
 
 userSchema.methods.generateAuthToken = function(){

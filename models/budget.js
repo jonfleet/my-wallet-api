@@ -9,42 +9,42 @@ const categorySchema = [
     {category: 'dining', spent: 0 , budget: 0}
 ]
 
-const budgetSchema = mongoose.Schema({
-    userId: String,
-    budget : {
-        "2020" : {
-            january: { type: Array, default : categorySchema},
-            february: { type: Array, default : categorySchema},
-            march: { type: Array, default : categorySchema},
-            april: { type: Array, default : categorySchema},
-            may: { type: Array, default : categorySchema},
-            june: { type: Array, default : categorySchema},
-            july: { type: Array, default : categorySchema},
-            august: { type: Array, default : categorySchema},
-            september: { type: Array, default : categorySchema},
-            october: { type: Array, default : categorySchema},
-            november: { type: Array, default : categorySchema},
-            december: { type: Array, default : categorySchema},
-        },
-    }
+const budgetYearSchema = mongoose.Schema({
+    january: { type: Array, default : categorySchema},
+    february: { type: Array, default : categorySchema},
+    march: { type: Array, default : categorySchema},
+    april: { type: Array, default : categorySchema},
+    may: { type: Array, default : categorySchema},
+    june: { type: Array, default : categorySchema},
+    july: { type: Array, default : categorySchema},
+    august: { type: Array, default : categorySchema},
+    september: { type: Array, default : categorySchema},
+    october: { type: Array, default : categorySchema},
+    november: { type: Array, default : categorySchema},
+    december: { type: Array, default : categorySchema}
 })
 
-const budgetYearSchema = mongoose.Schema({
-    budgetYear : {
-            january: { type: Array, default : categorySchema},
-            february: { type: Array, default : categorySchema},
-            march: { type: Array, default : categorySchema},
-            april: { type: Array, default : categorySchema},
-            may: { type: Array, default : categorySchema},
-            june: { type: Array, default : categorySchema},
-            july: { type: Array, default : categorySchema},
-            august: { type: Array, default : categorySchema},
-            september: { type: Array, default : categorySchema},
-            october: { type: Array, default : categorySchema},
-            november: { type: Array, default : categorySchema},
-            december: { type: Array, default : categorySchema},
-    }
+const budgetSchema = mongoose.Schema({
+    userId: String,
+    budget: Object
+    // budget : {
+    //     "2020" : {
+    //         january: { type: Array, default : categorySchema},
+    //         february: { type: Array, default : categorySchema},
+    //         march: { type: Array, default : categorySchema},
+    //         april: { type: Array, default : categorySchema},
+    //         may: { type: Array, default : categorySchema},
+    //         june: { type: Array, default : categorySchema},
+    //         july: { type: Array, default : categorySchema},
+    //         august: { type: Array, default : categorySchema},
+    //         september: { type: Array, default : categorySchema},
+    //         october: { type: Array, default : categorySchema},
+    //         november: { type: Array, default : categorySchema},
+    //         december: { type: Array, default : categorySchema}
+    //     }
+    // }
 })
+
 
 const Budget = mongoose.model("Budget", budgetSchema)
 const BudgetYear = mongoose.model("BudgetYear", budgetYearSchema)

@@ -5,11 +5,5 @@ async function hashPassword(password){
     const hashedPassword = await bcrypt.hash(password, salt)
     return hashedPassword
 }
-// console.log(router.function name(params) {
-    
-// })
-
 
 module.exports = hashPassword
-
-// console.log(module)

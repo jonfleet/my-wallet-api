@@ -1,13 +1,11 @@
 const express = require('express')
 const config = require("config")
-const mongoose = require('mongoose')
 const report = require('./routes/report')
 const budget = require('./routes/budget')
 const expense = require('./routes/expense')
 const user = require('./routes/user')
 const auth = require('./routes/auth')
 const app = express()
-const cors = require('cors')
 require('dotenv').config()
 
 
@@ -17,7 +15,7 @@ require("./startup/db")();
 
 // Middleware
 
-// app.use(cors)
+// CORS
 app.use((req, res, next) => {
         res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
         // res.header('Access-Control-Allow-Origin', '*');
@@ -25,7 +23,7 @@ app.use((req, res, next) => {
         next();
 });
 
-// routes
+// Routes
 app.use(express.json())
 app.use('/', report)
 app.use('/', budget)

@@ -30,6 +30,8 @@ const userSchema = mongoose.Schema({
     // }
 })
 
+// userSchema.add({ String})
+
 userSchema.methods.generateAuthToken = function(){
     const token = jwt.sign({_id: this._id, username: this.username, isAdmin: this.isAdmin}, process.env.MY_WALLET_JWTPRIVATEKEY)
     return token

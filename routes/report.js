@@ -6,10 +6,10 @@ const cors = require('cors')
 
 router.options('/report', cors())
 
-router.post('/report', cors(), async (req, res ) => {
+router.post('/report', auth, cors(), async (req, res ) => {
     try{
         const report = await Expense.find({userId: req.body.userId})
-        // console.log(req.headers)
+        
         res.send(report)
     } catch (ex){
         res.status(404).send(ex)

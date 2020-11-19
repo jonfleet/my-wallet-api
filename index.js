@@ -6,6 +6,7 @@ const expense = require('./routes/expense')
 const user = require('./routes/user')
 const auth = require('./routes/auth')
 const app = express()
+const cors = require('cors')
 require('dotenv').config()
 
 

@@ -6,11 +6,16 @@ const auth = require('../middleware/auth')
 const cors = require('cors')
 
 // router.use(cors)
+var corsOptions = {
+    origin: "https://quiet-atoll-26675.herokuapp.com",
+    optionsSuccessStatus: 200
+}
+
 
 router.options('/getBudget', cors())
 router.options('/changeBudget', cors())
 
-router.post("/getBudget", auth, async (req,res) => {
+router.post("/getBudget", auth, cors(corsOptions), async (req,res) => {
     try {
         
         const budget = await Budget.findOne({userId : req.body.userId})
@@ -23,7 +28,7 @@ router.post("/getBudget", auth, async (req,res) => {
     }
 })
 
-router.put("/changeBudget", auth, cors(), async (req,res) => {
+router.put("/changeBudget", auth, cors(corsOptions), async (req,res) => {
     console.log(req.body)
     const {userId, activeYear, activeMonth, category, amount} = req.body
 

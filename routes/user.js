@@ -6,9 +6,14 @@ const {Budget, BudgetYear } = require('../models/budget')
 const hashPassword = require('../util/hash')
 const cors = require('cors')
 
+var corsOptions = {
+    origin: "https://quiet-atoll-26675.herokuapp.com",
+    optionsSuccessStatus: 200
+}
+
 router.options('/createUser', cors())
 
-router.post('/createUser', cors(), async (req, res) => {
+router.post('/createUser', cors(corsOptions), async (req, res) => {
     
     try {
         let user = await User.findOne({username: req.body.username})

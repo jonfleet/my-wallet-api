@@ -13,9 +13,15 @@ if(!process.env.MY_WALLET_JWTPRIVATEKEY){
     process.exit(1);
 }
 
+var corsOptions = {
+    origin: "https://quiet-atoll-26675.herokuapp.com",
+    optionsSuccessStatus: 200
+}
+
+
 router.options('/auth', cors())
 
-router.post('/auth', cors(), async (req, res) => {
+router.post('/auth', cors(corsOptions), async (req, res) => {
 
     let user = await User.findOne({username: req.body.username})
     if (!user) return res.status(400).send("User not registered")

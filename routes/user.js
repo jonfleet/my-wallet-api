@@ -38,9 +38,11 @@ router.post('/createUser', cors(corsOptions), async (req, res) => {
         await budget.save() 
 
         const token = user.generateAuthToken();
+        
+        res.set("Access-Control-Allow-Origin", "https://quiet-atoll-26675.herokuapp.com")
+        
         res
             .header("x-auth-token", token)
-            .header("Access-Control-Allow-Origin", "https://quiet-atoll-26675.herokuapp.com")
             .header("access-control-expose-headers", "x-auth-token")
             .send(_.pick(user, ["username", "password", "_id"]))
 

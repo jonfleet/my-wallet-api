@@ -18,19 +18,19 @@ require("./startup/db")();
 
 // CORS
 
-// app.use((req, res, next) => {
-//         // res.header('Access-Control-Allow-Origin', '*');
-//         // res.header('Access-Control-Allow-Origin', 'https://quiet-atoll-26675.herokuapp.com/')
-//         // res.header('Access-Control-Allow-Origin', '*');
-//         // req.header('Access-Control-Allow-Origin', "*");
-//         // console.log(response)
-//         next();
-// });
-
+app.use((req, res, next) => {
+        // res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Origin', 'https://quiet-atoll-26675.herokuapp.com/')
+        // res.header('Access-Control-Allow-Origin', '*');
+        // req.header('Access-Control-Allow-Origin', "*");
+        // console.log(response)
+        next();
+});
+app.use(express.json())
 app.use(cors({origin: true, credentials: true}))
 
 // Routes
-app.use(express.json())
+
 app.use('/', report)
 app.use('/', budget)
 app.use('/', expense)

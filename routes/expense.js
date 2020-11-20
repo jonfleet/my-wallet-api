@@ -8,7 +8,7 @@ const auth = require('../middleware/auth')
 const cors = require('cors')
 
 var corsOptions = {
-    origin: "https://mysterious-bayou-32982.herokuapp.com/",
+    origin: "https://quiet-atoll-26675.herokuapp.com",
     optionsSuccessStatus: 200
 }
 

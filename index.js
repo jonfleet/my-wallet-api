@@ -20,12 +20,12 @@ require("./startup/db")();
 
 app.use((req, res, next) => {
         // res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Origin', 'https://quiet-atoll-26675.herokuapp.com/')
+        res.header('Access-Control-Allow-Origin', 'http://quiet-atoll-26675.herokuapp.com/')
         res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
         // Set custom headers for CORS
         res.header("Access-Control-Allow-Headers", "Content-Type,Accept,x-auth-token")
         // req.header('Access-Control-Allow-Origin', "*");
-        // console.log(response)
+        console.log(response)
         next();
 });
 app.use(express.json())

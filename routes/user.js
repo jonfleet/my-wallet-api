@@ -13,7 +13,7 @@ var corsOptions = {
 
 router.options('/createUser', cors())
 
-router.post('/createUser', cors(corsOptions), async (req, res) => {
+router.post('/createUser', async (req, res) => {
     
     try {
         let user = await User.findOne({username: req.body.username})
@@ -39,7 +39,7 @@ router.post('/createUser', cors(corsOptions), async (req, res) => {
 
         const token = user.generateAuthToken();
         
-        res.set("Access-Control-Allow-Origin", "*")
+        // res.set("Access-Control-Allow-Origin", "*")
         
         res
             .header("x-auth-token", token)

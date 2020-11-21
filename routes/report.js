@@ -2,16 +2,10 @@ const express = require("express")
 const router = express.Router()
 const {Expense} = require("../models/expense")
 const auth = require('../middleware/auth')
-const cors = require('cors')
 
-var corsOptions = {
-    origin: "https://quiet-atoll-26675.herokuapp.com",
-    optionsSuccessStatus: 200
-}
 
-router.options('/report', cors())
 
-router.post('/report', auth, cors(corsOptions), async (req, res ) => {
+router.post('/report', auth, async (req, res ) => {
     try{
         const report = await Expense.find({userId: req.body.userId})
         

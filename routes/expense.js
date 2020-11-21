@@ -5,16 +5,10 @@ const {Expense} = require('../models/expense')
 const {User} = require('../models/user')
 const {Budget, BudgetYear} = require('../models/budget')
 const auth = require('../middleware/auth')
-const cors = require('cors')
 
-var corsOptions = {
-    origin: "https://quiet-atoll-26675.herokuapp.com",
-    optionsSuccessStatus: 200
-}
 
-router.options('/postExpense', cors())
  
-router.post('/postExpense', auth, cors(corsOptions), async (req, res) => {
+router.post('/postExpense', auth, async (req, res) => {
     
     const { userId, description, category, month, day, year, amount, account} = req.body
     const expense = new Expense({

@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const config = require('config')
-const cors = require('cors')
 const {User} = require('../models/user')
 const _ = require('lodash')
 const bcrypt = require('bcrypt')
@@ -13,15 +12,7 @@ if(!process.env.MY_WALLET_JWTPRIVATEKEY){
     process.exit(1);
 }
 
-var corsOptions = {
-    origin: "https://quiet-atoll-26675.herokuapp.com",
-    optionsSuccessStatus: 200
-}
-
-
-router.options('/auth', cors())
-
-router.post('/auth', cors(corsOptions), async (req, res) => {
+router.post('/auth', async (req, res) => {
 
     let user = await User.findOne({username: req.body.username})
     if (!user) return res.status(400).send("User not registered")

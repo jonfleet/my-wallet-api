@@ -17,14 +17,11 @@ require("./startup/db")();
 // Middleware
 
 // CORS
-app.options("*", cors())
-
-app.use((req, res, next) => {
-        res.header('Access-Control-Allow-Origin', 'https://whispering-shore-41464.herokuapp.com')
-        next();
-});
-
-
+app.use("*", cors())  
+// app.use((req, res, next) => {
+//         res.header('Access-Control-Allow-Origin', 'https://whispering-shore-41464.herokuapp.com')
+//         next();
+// });
 
 // Routes
 app.use(express.json())
